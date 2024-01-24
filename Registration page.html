@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Registration-form</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="assets/css/font-face.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="assets/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="assets/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="assets/css/theme.css" rel="stylesheet" media="all">
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h1 style="text-align: center; margin-top: 2%;"> Registration-form </h1><br>
+            <form method="post">
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 text-right">
+                                <div class="form-group">
+                                    <label>First Name<span class="required" style="color: red;">*</span> :</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div>
+                                    <input type="text" class="form-control" id="firstname_id"
+                                        placeholder="Enter Your First Name">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 text-right">
+                                <div class="form-group">
+                                    <label>Last Name<span class="required" style="color: red;">*</span> :</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div>
+                                    <input type="text" class="form-control" id="lastname_id"
+                                        placeholder="Enter Your Last Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 text-right">
+                                <div class="form-group">
+                                    <label>Email<span class="required" style="color: red;">*</span> :</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div>
+                                    <input type="email" class="form-control" id="email_id" onblur="ValidateEmail(this)"
+                                        placeholder="Enter Your Email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 text-right">
+                                <div class="form-group">
+                                    <label>Mobile Number<span class="required" style="color: red;">*</span> :</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div>
+                                    <input type="number" class="form-control" id="mobilenumber_id">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 text-right">
+                                <div class="form-group">
+                                    <label>Date of Birth<span class="required" style="color: red;">*</span> :</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div>
+                                    <!--<input type="date" class="form-control" id="dateofbirth_id">-->
+                                    <input id="dpr_id_dob" name="dpr_nm_dob" type="date" class="form-control" onchange="getAge(this.value)"> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 text-right">
+                                <label>Age<span class="required" style="color: red;">*</span> :</label>
+                            </div>
+                            <div class="col-md-1">
+                                <label>Years</label>
+                                <input type="text" placeholder="" class="form-control" id="agyr_id_age">
+
+
+                            </div>
+                            <div class="col-md-1">
+                                <label>Months</label>
+                                <input type="text" placeholder="" class="form-control" id="agmth_id_age">
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 text-right">
+                                <div class="form-group">
+                                    <label>Qualification<span class="required" style="color: red;">*</span> :</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div>
+                                    <select class="form-control" id="qualification_id">
+                                        <option value="Select">Select</option>
+                                        <option value="10th">10th</option>
+                                        <option value="12th">12th</option>
+                                        <option value="Bachelor of Engineering">Bachelor of Engineering</option>
+                                        <option value="Arts and Science">Arts and Science</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 text-right">
+                                <div class="form-group">
+                                    <label>Gender<span class="required" style="color: red;">*</span> :</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div id="gender_id">
+                                    <input type="radio" name="Gender">Male &nbsp;
+                                    <input type="radio" name="Gender">Female &nbsp;
+                                    <input type="radio" name="Gender">Other
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 text-right">
+                                <div class="form-group">
+                                    <label>Fresher / Experience<span class="required" style="color: red;">*</span>
+                                        :</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-control" id="workexperience_id"
+                                    onchange="fun_fresher_experience(this.value)">
+                                    <option value="">Select</option>
+                                    <option value="fresher">Fresher</option>
+                                    <option value="experience">Experience</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="div_id_fresher_experience" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-1">
+                                    <label>Years</label>
+                                    <input type="text" placeholder="" class="form-control" id="years_id">
+
+
+                                </div>
+                                <div class="col-md-1">
+                                    <label>Months</label>
+                                    <input type="text" placeholder="" class="form-control" id="month_id">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-3">
+                                    <label>Description</label>
+                                    <textarea cols="6" rows="5" id="description_id" class="form-control"
+                                        style="resize: none"></textarea>
+                                </div>
+                            </div><br>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 text-right">
+                                <div class="form-group">
+                                    <label>Address<span class="required" style="color: red;">*</span> :</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div>
+                                    <textarea style="background-color: gainsboro;width: 100%; resize: none; "
+                                        id="address_id"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 text-right">
+                                <div class="form-group">
+                                    <label>Resume<span class="required" style="color: red;">*</span> :</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div>
+                                    <input type="file" id="resume_id">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-left:42.7%;">
+                            <button type="button" class="btn btn-success"
+                                onclick=" return func_validation()">Submit</button>&nbsp;
+                            <button type="button" class="btn btn-danger" onclick="func_reset()">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
+
+<!-- Jquery JS-->
+<script src="assets/vendor/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap JS-->
+<script src="assets/vendor/bootstrap-4.1/popper.min.js"></script>
+<script src="assets/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+<!-- Vendor JS       -->
+<script src="assets/vendor/slick/slick.min.js">
+</script>
+<script src="assets/vendor/wow/wow.min.js"></script>
+<script src="assets/vendor/animsition/animsition.min.js"></script>
+<script src="assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+</script>
+<script src="assets/vendor/counter-up/jquery.waypoints.min.js"></script>
+<script src="assets/vendor/counter-up/jquery.counterup.min.js">
+</script>
+<script src="assets/vendor/circle-progress/circle-progress.min.js"></script>
+<script src="assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="assets/vendor/chartjs/Chart.bundle.min.js"></script>
+<script src="assets/vendor/select2/select2.min.js">
+</script>
+<!-- Main JS-->
+<script src="assets/js/main.js"></script>
+
+<script>
+    function func_validation() {
+        var y = true;
+        var firstname = document.getElementById('firstname_id').value;
+        var lastname = document.getElementById('lastname_id').value;
+        var email = document.getElementById('email_id').value;
+        var mobilenumber = document.getElementById('mobilenumber_id').value;
+        var dateofbirth = document.getElementById('dpr_id_dob').value;
+        var qualification = document.getElementById('qualification_id').value;
+        var workexperience = document.getElementById('workexperience_id').value;
+        var address = document.getElementById('address_id').value;
+        var resume = document.getElementById('resume_id').value;
+        if (firstname == "") {
+            //alert('Please Fill the First Name')
+            y = false;
+            document.getElementById('firstname_id').style.borderColor = "red";
+            document.getElementById('firstname_id').style.borderWidth = "small";
+        }
+        else if (lastname == "") {
+            //alert('Please Fill the last name')
+            y = false;
+            document.getElementById('lastname_id').style.borderColor = "red";
+            document.getElementById('lastname_id').style.borderWidth = "medium";
+        }
+        else if (email == "") {
+            alert('Please Fill the email')
+            y = false;
+            document.getElementById('email_id').value;
+
+        }
+        else if (mobilenumber == "") {
+            alert('Please Fill the mobil enumber')
+            document.getElementById('mobilenumber_id').value;
+            y = false;
+        }
+        else if (dateofbirth == "") {
+            alert('Please Fill the date of birth')
+            document.getElementById('dpr_id_dob').value;
+            y = false;
+        }
+        else if (qualification == "") {
+            alert('Please select qualification')
+            document.getElementById('qualification_id').value;
+            y = false;
+        }
+        else if (workexperience == "") {
+            alert('Please select work experience')
+            document.getElementById('workexperience_id').value;
+            y = false;
+        }
+        else if (address == "") {
+            alert('Please Fill the address')
+            document.getElementById('address_id').value;
+            y = false;
+        }
+        else if (resume == "") {
+            alert('Please upload file')
+            document.getElementById('resume_id').value;
+            y = false;
+        }
+        else {
+            y = true;
+        }
+        return y;
+    }
+    function func_reset() {
+        document.getElementById('firstname_id').value = "";
+        document.getElementById('lastname_id').value = "";
+        document.getElementById('email_id').value = "";
+        document.getElementById('mobilenumber_id').value = "";
+        document.getElementById('dpr_id_dob').value = "";
+        document.getElementById('qualification_id').value = "";
+        document.getElementById('gender_id').value = "";
+        document.getElementById('workexperience_id').value = "";
+        document.getElementById('address_id').value = "";
+        document.getElementById('resume_id').value = "";
+        document.getElementById('agyr_id_age').value = "";
+        document.getElementById('agmth_id_age').value = "";
+    }
+</script>
+
+<script>
+    function fun_fresher_experience(param) {
+
+        if (param == 'experience') {
+
+            document.getElementById('div_id_fresher_experience').style.display = "block";
+        }
+        else {
+            document.getElementById('div_id_fresher_experience').style.display = "none";
+            document.getElementById('description_id').value = "";
+            document.getElementById('month_id').value = "";
+            document.getElementById('years_id').value = "";
+        }
+    }
+
+    function getAge(dateString) {
+      var From_date =  new Date(dateString);
+      var To_date = new Date();
+      var diff_date =  To_date - From_date;
+      var daysDiff = Math.floor(diff_date / (1000 * 60 * 60 * 24));
+      var years = Math.floor(diff_date/31536000000);
+      var months = Math.floor((diff_date % 31536000000)/2628000000);
+
+if (years >=18) {
+
+   document.getElementById('agyr_id_age').value=years;
+   document.getElementById('agmth_id_age').value=months;
+
+}else
+{
+   alert('Your age should be Must above 18')
+   document.getElementById('agyr_id_age').value='';
+   document.getElementById('agmth_id_age').value='';
+   document.getElementById('dpr_id_dob').value='';
+}
+
+}
+
+function ValidateEmail(inputText)
+    {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(inputText.value.match(mailformat))
+    {
+    alert("Valid email address!");
+    return true;
+    }
+    else
+    {
+    alert("You have entered an invalid email address!");
+    return false;
+    }
+    }
+</script>
